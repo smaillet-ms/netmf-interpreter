@@ -460,8 +460,13 @@
         <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\lwip_1_4_1_OS\LWIP\src\dotnetmf_udp.proj" />
         <DriverLibs Include="sockets_hal_udp_lwIP_os.$(LIB_EXT)" />
 
-        <DriverLibs Include="STM32F4_ETH_lwip_os.$(LIB_EXT)" />
-        <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_ETH_lwip_os\dotNetMF.proj" />
+        <!--<DriverLibs Include="STM32F4_ETH_lwip_os.$(LIB_EXT)" />
+        <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Targets\Native\STM32F4\DeviceCode\STM32F4_ETH_lwip_os\dotNetMF.proj" />-->
+        <DriverLibs Include="Ethernet_enc28j60_lwip_OS.$(LIB_EXT)" />
+        <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\Drivers\Ethernet\enc28j60_lwip_os\dotNetMF.proj" />
+        <DriverLibs Include="ENC28J60_LWIP_OS_config.$(LIB_EXT)" />
+        <RequiredProjects Include="$(SPOCLIENT)\Solutions\MCBSTM32F400\DeviceCode\ENC28J60_LWIP_OS_Config\dotNetMF.proj" />
+
     </ItemGroup>
     <ItemGroup Condition="'$(USE_SSL)'!='true'">
         <RequiredProjects Include="$(SPOCLIENT)\DeviceCode\pal\COM\sockets\openssl\stubs\dotnetmf.proj" />

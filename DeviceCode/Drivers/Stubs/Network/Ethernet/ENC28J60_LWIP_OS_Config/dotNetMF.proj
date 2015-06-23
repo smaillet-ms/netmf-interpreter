@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>ENC28J60_LWIP_OS_OS_config_stubs</AssemblyName>
+    <Size>
+    </Size>
+    <ProjectGuid>{296EEA50-C775-45A4-B638-A5809FA6EEA2}</ProjectGuid>
+    <Description>ENC28J60 Ethernet driver stub configuration</Description>
+    <Level>HAL</Level>
+    <LibraryFile>ENC28J60_LWIP_OS_config_stubs.$(LIB_EXT)</LibraryFile>
+    <ProjectPath>$(SPOCLIENT)\DeviceCode\Drivers\stubs\Network\Ethernet\ENC28J60_LWIP_OS_config\dotnetmf.proj</ProjectPath>
+    <ManifestFile>ENC28J60_LWIP_OS_config_stubs.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>Network\ENC28J60</Groups>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <CustomFilter>
+    </CustomFilter>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsStub>True</IsStub>
+    <Directory>DeviceCode\Drivers\stubs\Network\Ethernet\ENC28J60_LWIP_OS_config</Directory>
+    <OutputType>Library</OutputType>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Include="ENC28J60_LWIP_OS_config_stubs.cpp" />
+    <IncludePaths Include="DeviceCode\Drivers\Ethernet\ENC28J60_LWIP_OS" />
+    <IncludePaths Include="DeviceCode\include" />
+    <IncludePaths Include="DeviceCode\pal\net" />
+    <IncludePaths Include="DeviceCode\pal\lwip\LWIP\src\include" />
+    <IncludePaths Include="DeviceCode\pal\lwip\LWIP\src\include\ipv4" />
+    <IncludePaths Include="DeviceCode\pal\lwip\LWIP\src\include\arch" />
+  </ItemGroup>
+  <ItemGroup>
+    <HFiles Include="$(SPOCLIENT)\devicecode\drivers\ethernet\ENC28J60_LWIP_OS\ENC28J60_LWIP_OS_driver.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\arch\cc.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\ipv4\lwip\inet.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\ipv4\lwip\ip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\ipv4\lwip\ip_addr.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\arch.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\debug.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\def.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\dhcp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\err.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\netif.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\opt.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\pbuf.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip\LWIP\src\include\lwip\udp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\net\network_defines_lwip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\net\net_decl_lwip.h" />
+  </ItemGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+</Project>

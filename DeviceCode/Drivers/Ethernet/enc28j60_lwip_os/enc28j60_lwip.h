@@ -13,25 +13,30 @@
 #define __ENC28J60_H__
 
 #include <tinyhal.h>
-#include <enc28j60_driver.h>
+#include <enc28j60_lwip_driver.h>
 
-/*          FUNCTION PROTOTYPE                                          */
+bool enc28j60_lwip_open( struct netif *pNetIf );
+void enc28j60_lwip_close( struct netif *pNetIf  );
+err_t enc28j60_lwip_xmit( struct netif *pNetIf, struct pbuf *pPBuf );
+int enc28j60_lwip_recv( struct netif *pNetIf );
+void enc28j60_lwip_interrupt( struct netif *pNetIf );
+void enc28j60_isr( GPIO_PIN Pin, BOOL PinState, void *pArg );
+void enc28j60_lwip_setup_recv_buffer( struct netif *pNetIf, SPI_CONFIGURATION* SpiConf);
+void InitContinuations( netif* pNetIf );
+void lwip_interrupt_continuation( );
 
+extern bool enc28j60_lwip_setup_device( struct netif *pNetIf );
+extern BOOL enc28j60_get_link_status( SPI_CONFIGURATION* spiConf );
 
-/*          STRUCTURES                                                  */
+extern HAL_CONTINUATION InterruptTaskContinuation;
+extern HAL_COMPLETION LinkStatusCompletion;
 
-typedef struct enc28j60_softc
-{
-    PIFACE                              iface;
-    struct                              ether_statistics stats;
-    int                                 ia_irq;
-    unsigned short                      xmit_start_buffer;
-    unsigned short                      recv_start_buffer;
-    RTP_UINT8                           mac_address[6];
-    RTP_UINT8                           dummy[2];           /* alignment bytes */
-} ENC28J60_SOFTC;
+#define ETHERSIZE ((ENC28J60_TRANSMIT_BUFFER_END - ENC28J60_TRANSMIT_BUFFER_START)>>1)   /* maximum number of bytes in ETHERNET packet */
+                                                                                         /* (used by ethernet drivers)   */
 
-typedef ENC28J60_SOFTC RTP_FAR * PENC28J60_SOFTC;
+#define ETHER_MIN_LEN    64  /* minimum number of bytes in an ETHERNET */
+                             /* packet   */
+
 
 
 /*              ENC28J60 CONFIGURATION                                  */
@@ -333,6 +338,8 @@ typedef ENC28J60_SOFTC RTP_FAR * PENC28J60_SOFTC;
 #define ENC28J60_PHCON2_HDLDIS      8
 
 #define ENC28J60_PHSTAT2            0x11
+#define ENC28J60_PHSTAT2_LSTAT_BIT    10
+
 #define ENC28J60_PHIE               0x12
 #define ENC28J60_PHIR               0x13
 #define ENC28J60_PHLCON             0x14

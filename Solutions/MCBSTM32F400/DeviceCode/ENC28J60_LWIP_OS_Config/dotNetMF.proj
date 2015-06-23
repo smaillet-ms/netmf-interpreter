@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" InitialTargets="YooHoo" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>ENC28J60_LWIP_OS_config</AssemblyName>
+    <Size>
+    </Size>
+    <ProjectGuid>{96DF55D3-00DB-4F0F-902F-D1C096448383}</ProjectGuid>
+    <Description>ENC28J60 Ethernet driver configuration</Description>
+    <Level>HAL</Level>
+    <LibraryFile>ENC28J60_LWIP_OS_config.$(LIB_EXT)</LibraryFile>
+    <ProjectPath>$(SPOCLIENT)\Solutions\MCBSTM32F400\DeviceCode\ENC28J60_LWIP_OS_Config\dotNetMF.proj</ProjectPath>
+    <ManifestFile>ENC28J60_LWIP_OS_config.$(LIB_EXT).manifest</ManifestFile>
+    <Groups>Network</Groups>
+    <Documentation>
+    </Documentation>
+    <PlatformIndependent>False</PlatformIndependent>
+    <CustomFilter>
+    </CustomFilter>
+    <Required>False</Required>
+    <IgnoreDefaultLibPath>False</IgnoreDefaultLibPath>
+    <IsStub>false</IsStub>
+    <Directory>Solutions\MCBSTM32F400\DeviceCode\ENC28J60_LWIP_OS_Config</Directory>
+    <OutputType>Library</OutputType>
+    <PlatformIndependentBuild>false</PlatformIndependentBuild>
+    <Version>4.0.0.0</Version>
+  </PropertyGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Settings" />
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Include="ENC28J60_LWIP_OS_config.cpp" />
+    <IncludePaths Include="DeviceCode\Drivers\Ethernet\ENC28J60_LWIP_OS" />
+    <IncludePaths Include="DeviceCode\include" />
+    <IncludePaths Include="DeviceCode\pal\net" />
+    <IncludePaths Include="DeviceCode\pal\lwip_1_4_1_os\LWIP\src\include" />
+    <IncludePaths Include="DeviceCode\pal\lwip_1_4_1_os\LWIP\src\include\ipv4" />
+    <IncludePaths Include="DeviceCode\pal\lwip_1_4_1_os\LWIP\src\include\arch" />
+  </ItemGroup>
+  <ItemGroup>
+    <HFiles Include="$(SPOCLIENT)\devicecode\drivers\ethernet\ENC28J60_LWIP_OS\ENC28J60_LWIP_OS_driver.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\arch\cc.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\ipv4\lwip\inet.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\ipv4\lwip\ip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\ipv4\lwip\ip_addr.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\arch.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\debug.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\def.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\dhcp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\err.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\netif.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\opt.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\pbuf.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\lwip_1_4_1_os\LWIP\src\include\lwip\udp.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\net\network_defines_lwip.h" />
+    <HFiles Include="$(SPOCLIENT)\devicecode\pal\net\net_decl_lwip.h" />
+  </ItemGroup>
+  <Import Project="$(SPOCLIENT)\tools\targets\Microsoft.SPOT.System.Targets" />
+    <Target Name="YooHoo">
+        <Message Importance="high" Text="YooHoo!" />
+    </Target>
+</Project>
